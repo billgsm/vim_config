@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/bilou/.vim'
-let g:netrw_dirhist_2='/home/bilou/.vim/plugins'
-let g:netrw_dirhist_3='/home/bilou/Documents/projects/github/agenda/templates/personal_calendar'
-let g:netrw_dirhist_4='/home/bilou/Documents/projects/github/agenda/templates/personal_calendar/event'
-let g:netrw_dirhist_5='/home/bilou/Documents/projects/github/Symfony/src/Sdz/BlogBundle/Resources/views'
