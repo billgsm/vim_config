@@ -86,7 +86,11 @@ set hlsearch
 set incsearch
 " show existing tab with 4 spaces width
 set tabstop=4
-" " when indenting with '>', use 4 spaces width
+" when indenting with '>', use 4 spaces width
 set shiftwidth=4
-" " On pressing tab, insert 4 spaces
+" On pressing tab, insert 4 spaces
 set expandtab
+" Backup file is not important anymore (thanks to version control systems)
+set noswapfile
+" Disable the mouse
+set mouse=
