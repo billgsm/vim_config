@@ -83,9 +83,6 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-" vim-airline
-let g:airline#extensions#tabline#enabled = 1
-
 set number
 set hlsearch
 set incsearch
@@ -99,3 +96,6 @@ set expandtab
 set noswapfile
 " Disable the mouse
 set mouse=
+
+" Load ctags file from the root project directory
+set tags=./tags;/
