@@ -18,6 +18,10 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'elzr/vim-json'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+
+" Twig integration
+Plugin 'lumiliet/vim-twig'
 
 " Git integration
 """""""""""""""""
