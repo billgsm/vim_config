@@ -16,15 +16,45 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'elzr/vim-json'
+Plugin 'lumiliet/vim-twig'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
-
-" Git integration
-"""""""""""""""""
+Plugin 'godlygeek/tabular'
+" Adds icons based on the file type
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plugin 'ryanoasis/vim-devicons'
 " Git inside your file
 Plugin 'airblade/vim-gitgutter'
 " Run git cmd from inside your file
 Plugin 'tpope/vim-fugitive'
+" PHP Xdebug
+Plugin 'joonty/vdebug'
+" MarkDown
+Plugin 'plasticboy/vim-markdown'
+" vuejs
+Plugin 'posva/vim-vue'
+" Emmet vim
+Plugin 'mattn/emmet-vim'
+" rename vim
+Plugin 'vim-scripts/rename.vim'
+" editorconfig
+Plugin 'editorconfig/editorconfig-vim'
+" Comment/Uncomment html xml ...
+Plugin 'tomtom/tcomment_vim'
+" vim-scripts/matchit.zip html xml ...
+Plugin 'vim-scripts/matchit.zip'
+" tpope/vim-surround html xml ...
+Plugin 'tpope/vim-surround'
+" vim-multiple-cursors
+Plugin 'terryma/vim-multiple-cursors'
+" sass/scss/haml syntax
+Plugin 'tpope/vim-haml'
+" less
+Plugin 'groenewege/vim-less'
+" css color highlight
+Plugin 'skammer/vim-css-color'
+" postcss
+Plugin 'stephenway/postcss.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -57,8 +87,8 @@ filetype plugin indent on    " required
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'v'
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -79,6 +109,41 @@ let g:NERDTreeIndicatorMapCustom = {
 
 let g:nerdtree_tabs_open_on_console_startup=1
 
+" vim-devicons
+" TODO broken so far, investigate ASAP
+"set encoding=utf8
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+" let s:brown = "905532"
+" let s:aqua =  "3AFFDB"
+" let s:blue = "689FB6"
+" let s:darkBlue = "44788E"
+" let s:purple = "834F79"
+" let s:lightPurple = "834F79"
+" let s:red = "AE403F"
+" let s:beige = "F5C06F"
+" let s:yellow = "F09F17"
+" let s:orange = "D4843E"
+" let s:darkOrange = "F16529"
+" let s:pink = "CB6F6F"
+" let s:salmon = "EE6E73"
+" let s:green = "8FAA54"
+" let s:lightGreen = "31B53E"
+" let s:white = "FFFFFF"
+" let s:rspec_red = 'FE405F'
+" let s:git_orange = 'F54D27'
+
+" let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
+
+" let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+
+" let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+
+"""""""""""""""""""""""""""""""""""""
+
+
 syntax enable
 set background=dark
 colorscheme solarized
@@ -96,6 +161,20 @@ set expandtab
 set noswapfile
 " Disable the mouse
 set mouse=
+" Look for next occurrence of the visual selected pattern
+vnoremap // y/<C-R>"<CR>
 
 " Load ctags file from the root project directory
 set tags=./tags;/
+
+" PHP Xdebug config
+let g:vdebug_options = {}
+let g:vdebug_options["port"] = 9000
+
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
+" Emmet vim
+" Only enables html/css
+"let g:user_emmet_install_global = 0
+"autocmd FileType html,css EmmetInstall
